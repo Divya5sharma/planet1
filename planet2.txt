@@ -1,0 +1,58 @@
+//planetery Motion
+#include<math.h>
+#include<graphics.h>
+int main()
+{
+int g=DETECT,d;
+initgraph(&g,&d,"c:\turboc3\bgi");
+for(int round=0;round<1;round++)
+{
+for(float i1=0,i2=0,i3=0,i4=0,i5=0;i1<360,i2<360,i3<360,i4<360,i5<360;i1+=5,i2+=4,i3+=3,i4+=2,i5++)
+{
+delay(50);
+clearviewport();
+setcolor(14);
+circle(320,240,40); //SUN
+setfillstyle(1,14);
+floodfill(320,240,14);
+outtextxy(340,280,"SUN");
+int x=80*sin(i1*3.14/180);
+int y=52*cos(i1*3.14/180);
+setcolor(15);
+ellipse(320,240,0,360,80,52); //ORBIT MERCURY
+setcolor(8);
+circle(x+320,y+240,2); //MERCURY
+outtextxy(x+324,y+244,"MERCURY");
+setfillstyle(1,8);
+floodfill(x+320,y+240,8);
+int x1=100*sin((i2+160)*3.14/180);
+int y1=62*cos((i2+160)*3.14/180);
+setcolor(15);
+ellipse(320,240,0,360,100,60); //ORBIT VENUS
+setcolor(12);
+circle(x1+320,y1+240,5); //VENUS
+outtextxy(x1+325,y1+245,"VENUS");
+setfillstyle(1,12);
+floodfill(x1+320,y1+240,12);
+int x2=110*sin((i3+340)*3.14/180);
+int y2=72*cos((i3+340)*3.14/180);
+setcolor(15);
+ellipse(320,240,0,360,110,72); //ORBIT EARTH
+setcolor(9);
+circle(x2+320,y2+240,4); //EARTH
+outtextxy(x2+327,y2+247,"EARTH");
+setfillstyle(1,9);
+floodfill(x2+320,y2+240,9);
+int x3=120*sin((i4+20)*3.14/180);
+int y3=82*cos((i4+20)*3.14/180);
+setcolor(15);
+ellipse(320,240,0,360,120,82); //ORBIT MARS
+setcolor(4);
+circle(x3+320,y3+240,3); //MARS
+outtextxy(x3+328,y3+248,"MARS");
+setfillstyle(1,4);
+floodfill(x3+320,y3+240,4);
+
+}
+}
+}
